@@ -1,0 +1,34 @@
+[2024-07-15T16:18:00.444+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-15T16:18:00.559+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Postgres_dag.postgres manual__2024-07-15T16:14:36.136595+00:00 [queued]>
+[2024-07-15T16:18:00.601+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Postgres_dag.postgres manual__2024-07-15T16:14:36.136595+00:00 [queued]>
+[2024-07-15T16:18:00.607+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 8
+[2024-07-15T16:18:00.828+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): postgres> on 2024-07-15 16:14:36.136595+00:00
+[2024-07-15T16:18:00.846+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Postgres_dag', 'postgres', 'manual__2024-07-15T16:14:36.136595+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres.py', '--cfg-path', '/tmp/tmprg52yjnw']
+[2024-07-15T16:18:00.867+0000] {standard_task_runner.py:91} INFO - Job 53: Subtask postgres
+[2024-07-15T16:18:00.848+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1509) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-15T16:18:00.882+0000] {standard_task_runner.py:63} INFO - Started process 1523 to run task
+[2024-07-15T16:18:01.128+0000] {task_command.py:426} INFO - Running <TaskInstance: Postgres_dag.postgres manual__2024-07-15T16:14:36.136595+00:00 [running]> on host 32f997017b5a
+[2024-07-15T16:18:02.116+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rayzo' AIRFLOW_CTX_DAG_ID='Postgres_dag' AIRFLOW_CTX_TASK_ID='postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-07-15T16:14:36.136595+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-15T16:14:36.136595+00:00'
+[2024-07-15T16:18:02.165+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-15T16:18:02.385+0000] {sql.py:276} INFO - Executing:  
+        Create table if not exists drag_runs(
+        dt date,
+        dag_id character varying,
+        primary key (dt, dag_id)
+        )
+        
+[2024-07-15T16:18:02.461+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-15T16:18:02.569+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-15T16:18:02.629+0000] {sql.py:487} INFO - Running statement:  
+        Create table if not exists drag_runs(
+        dt date,
+        dag_id character varying,
+        primary key (dt, dag_id)
+        )
+        , parameters: None
+[2024-07-15T16:18:02.676+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-15T16:18:02.786+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Postgres_dag, task_id=postgres, run_id=manual__2024-07-15T16:14:36.136595+00:00, execution_date=20240715T161436, start_date=20240715T161800, end_date=20240715T161802
+[2024-07-15T16:18:02.942+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-15T16:18:03.008+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py:1297 AirflowProviderDeprecationWarning: Call to deprecated class PostgresOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+[2024-07-15T16:18:03.140+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-15T16:18:03.205+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

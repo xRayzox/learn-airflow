@@ -1,0 +1,1 @@
+[2024-07-15T16:17:10.764+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: Postgres_dag.delete_data_from_table manual__2024-07-15T16:14:36.136595+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?

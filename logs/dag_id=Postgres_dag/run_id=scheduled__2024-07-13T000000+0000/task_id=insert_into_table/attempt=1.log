@@ -1,0 +1,50 @@
+[2024-07-15T16:18:09.682+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-15T16:18:09.833+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [queued]>
+[2024-07-15T16:18:09.849+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [queued]>
+[2024-07-15T16:18:09.850+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-07-15T16:18:09.932+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2024-07-13 00:00:00+00:00
+[2024-07-15T16:18:09.966+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Postgres_dag', 'insert_into_table', 'scheduled__2024-07-13T00:00:00+00:00', '--job-id', '83', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres.py', '--cfg-path', '/tmp/tmp2fk9ttro']
+[2024-07-15T16:18:09.985+0000] {standard_task_runner.py:91} INFO - Job 83: Subtask insert_into_table
+[2024-07-15T16:18:09.966+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1587) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-15T16:18:09.998+0000] {standard_task_runner.py:63} INFO - Started process 1609 to run task
+[2024-07-15T16:18:10.217+0000] {task_command.py:426} INFO - Running <TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [running]> on host 32f997017b5a
+[2024-07-15T16:18:10.745+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rayzo' AIRFLOW_CTX_DAG_ID='Postgres_dag' AIRFLOW_CTX_TASK_ID='insert_into_table' AIRFLOW_CTX_EXECUTION_DATE='2024-07-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-13T00:00:00+00:00'
+[2024-07-15T16:18:10.753+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-15T16:18:10.832+0000] {sql.py:276} INFO - Executing:  
+        insert into drag_runs(dt,dag_id) values('2024-07-13', 'Postgres_dag')
+        
+[2024-07-15T16:18:10.904+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-15T16:18:11.028+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-15T16:18:11.137+0000] {sql.py:487} INFO - Running statement:  
+        insert into drag_runs(dt,dag_id) values('2024-07-13', 'Postgres_dag')
+        , parameters: None
+[2024-07-15T16:18:11.218+0000] {sql.py:496} INFO - Rows affected: 1
+[2024-07-15T16:18:11.282+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-15T16:18:11.370+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Postgres_dag, task_id=insert_into_table, run_id=scheduled__2024-07-13T00:00:00+00:00, execution_date=20240713T000000, start_date=20240715T161809, end_date=20240715T161811
+[2024-07-15T16:18:11.592+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-15T16:18:11.658+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-07-17T09:26:57.929+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-17T09:26:58.029+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [queued]>
+[2024-07-17T09:26:58.057+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [queued]>
+[2024-07-17T09:26:58.058+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-07-17T09:26:58.135+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2024-07-13 00:00:00+00:00
+[2024-07-17T09:26:58.146+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3134) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-17T09:26:58.148+0000] {standard_task_runner.py:63} INFO - Started process 3137 to run task
+[2024-07-17T09:26:58.148+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Postgres_dag', 'insert_into_table', 'scheduled__2024-07-13T00:00:00+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres.py', '--cfg-path', '/tmp/tmpe3byxj52']
+[2024-07-17T09:26:58.153+0000] {standard_task_runner.py:91} INFO - Job 39: Subtask insert_into_table
+[2024-07-17T09:26:58.322+0000] {task_command.py:426} INFO - Running <TaskInstance: Postgres_dag.insert_into_table scheduled__2024-07-13T00:00:00+00:00 [running]> on host 67c97fe0936f
+[2024-07-17T09:26:58.578+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rayzo' AIRFLOW_CTX_DAG_ID='Postgres_dag' AIRFLOW_CTX_TASK_ID='insert_into_table' AIRFLOW_CTX_EXECUTION_DATE='2024-07-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-13T00:00:00+00:00'
+[2024-07-17T09:26:58.580+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-17T09:26:58.609+0000] {sql.py:276} INFO - Executing:  
+        insert into drag_runs(dt,dag_id) values('2024-07-13', 'Postgres_dag')
+        
+[2024-07-17T09:26:58.619+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-17T09:26:58.628+0000] {base.py:84} INFO - Using connection ID 'Postgres_con' for task execution.
+[2024-07-17T09:26:58.641+0000] {sql.py:487} INFO - Running statement:  
+        insert into drag_runs(dt,dag_id) values('2024-07-13', 'Postgres_dag')
+        , parameters: None
+[2024-07-17T09:26:58.644+0000] {sql.py:496} INFO - Rows affected: 1
+[2024-07-17T09:26:58.687+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-17T09:26:58.711+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Postgres_dag, task_id=insert_into_table, run_id=scheduled__2024-07-13T00:00:00+00:00, execution_date=20240713T000000, start_date=20240717T092658, end_date=20240717T092658
+[2024-07-17T09:26:58.807+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-17T09:26:58.818+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

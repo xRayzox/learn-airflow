@@ -1,0 +1,18 @@
+[2024-07-11T14:48:42.714+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-11T14:48:42.748+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: python_dag.get manual__2024-07-11T14:48:41.779529+00:00 [queued]>
+[2024-07-11T14:48:42.755+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: python_dag.get manual__2024-07-11T14:48:41.779529+00:00 [queued]>
+[2024-07-11T14:48:42.756+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-07-11T14:48:42.795+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): get> on 2024-07-11 14:48:41.779529+00:00
+[2024-07-11T14:48:42.803+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'python_dag', 'get', 'manual__2024-07-11T14:48:41.779529+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/python_dag.py', '--cfg-path', '/tmp/tmpc157mi_0']
+[2024-07-11T14:48:42.805+0000] {standard_task_runner.py:91} INFO - Job 24: Subtask get
+[2024-07-11T14:48:42.810+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1148) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-11T14:48:42.811+0000] {standard_task_runner.py:63} INFO - Started process 1150 to run task
+[2024-07-11T14:48:42.892+0000] {task_command.py:426} INFO - Running <TaskInstance: python_dag.get manual__2024-07-11T14:48:41.779529+00:00 [running]> on host 54a03ee1424c
+[2024-07-11T14:48:43.084+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rayzo' AIRFLOW_CTX_DAG_ID='python_dag' AIRFLOW_CTX_TASK_ID='get' AIRFLOW_CTX_EXECUTION_DATE='2024-07-11T14:48:41.779529+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-11T14:48:41.779529+00:00'
+[2024-07-11T14:48:43.086+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-11T14:48:43.112+0000] {python.py:237} INFO - Done. Returned value was: Kunsha
+[2024-07-11T14:48:43.113+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-11T14:48:43.209+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=python_dag, task_id=get, run_id=manual__2024-07-11T14:48:41.779529+00:00, execution_date=20240711T144841, start_date=20240711T144842, end_date=20240711T144843
+[2024-07-11T14:48:43.388+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-11T14:48:43.419+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-11T14:48:43.479+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

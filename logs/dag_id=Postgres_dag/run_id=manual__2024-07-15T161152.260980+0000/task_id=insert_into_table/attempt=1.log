@@ -1,0 +1,72 @@
+[2024-07-15T16:11:54.829+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-15T16:11:54.908+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table manual__2024-07-15T16:11:52.260980+00:00 [queued]>
+[2024-07-15T16:11:54.928+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Postgres_dag.insert_into_table manual__2024-07-15T16:11:52.260980+00:00 [queued]>
+[2024-07-15T16:11:54.929+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2024-07-15T16:11:55.058+0000] {taskinstance.py:2330} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2024-07-15 16:11:52.260980+00:00
+[2024-07-15T16:11:55.070+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Postgres_dag', 'insert_into_table', 'manual__2024-07-15T16:11:52.260980+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_postgres.py', '--cfg-path', '/tmp/tmps4y5u4fs']
+[2024-07-15T16:11:55.075+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask insert_into_table
+[2024-07-15T16:11:55.082+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1028) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-15T16:11:55.085+0000] {standard_task_runner.py:63} INFO - Started process 1029 to run task
+[2024-07-15T16:11:55.247+0000] {task_command.py:426} INFO - Running <TaskInstance: Postgres_dag.insert_into_table manual__2024-07-15T16:11:52.260980+00:00 [running]> on host 32f997017b5a
+[2024-07-15T16:11:55.393+0000] {abstractoperator.py:725} ERROR - Exception rendering Jinja template for task 'insert_into_table', field 'sql'. Template: " \n        insert into table drag_runs(dt,dag_id) values('{{dt}}', '{{dag.dag_id}}')\n        "
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 717, in _do_render_template_fields
+    rendered_content = self.render_template(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 169, in render_template
+    return self._render(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 675, in _render
+    return super()._render(template, context, dag=dag)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 126, in _render
+    return render_template_to_string(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 289, in render_template_to_string
+    return render_template(template, cast(MutableMapping[str, Any], context), native=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 284, in render_template
+    return "".join(nodes)
+           ^^^^^^^^^^^^^^
+  File "<template>", line 14, in root
+  File "/home/airflow/.local/lib/python3.12/site-packages/jinja2/runtime.py", line 857, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'dt' is undefined
+[2024-07-15T16:11:55.398+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2479, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2633, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context, jinja_env=jinja_env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3094, in render_templates
+    original_task.render_template_fields(context, jinja_env)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 1337, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 717, in _do_render_template_fields
+    rendered_content = self.render_template(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 169, in render_template
+    return self._render(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/abstractoperator.py", line 675, in _render
+    return super()._render(template, context, dag=dag)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/template/templater.py", line 126, in _render
+    return render_template_to_string(template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 289, in render_template_to_string
+    return render_template(template, cast(MutableMapping[str, Any], context), native=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/helpers.py", line 284, in render_template
+    return "".join(nodes)
+           ^^^^^^^^^^^^^^
+  File "<template>", line 14, in root
+  File "/home/airflow/.local/lib/python3.12/site-packages/jinja2/runtime.py", line 857, in _fail_with_undefined_error
+    raise self._undefined_exception(self._undefined_message)
+jinja2.exceptions.UndefinedError: 'dt' is undefined
+[2024-07-15T16:11:55.415+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=Postgres_dag, task_id=insert_into_table, run_id=manual__2024-07-15T16:11:52.260980+00:00, execution_date=20240715T161152, start_date=20240715T161154, end_date=20240715T161155
+[2024-07-15T16:11:55.470+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 25 for task insert_into_table ('dt' is undefined; 1029)
+[2024-07-15T16:11:55.503+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-15T16:11:55.532+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-15T16:11:55.572+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
